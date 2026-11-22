@@ -18,10 +18,6 @@ The event took place on **Saturday, November 21, 2026, from 10:00 to 17:00 at It
 | Guillermo | [@GuilleVillarSan](https://x.com/GuilleVillarSan) |
 | Alejandro | [@alegoml](https://x.com/alegoml) |
 
-### The day on X
-
-[Sergi posted at the start and again with an hour left](https://x.com/search?q=from%3ASergimcc%20%23BcnOpenAIDevDays%20since%3A2026-11-20%20until%3A2026-11-23&f=live). [Nuria shared a team photo](https://x.com/user_nuria/status/2124133866541580506), [Alejandro quoted it](https://x.com/alegoml/status/2124151559084728555), and [Sergio posted from the event](https://x.com/sergiogomezmm/status/2124165672598970467). These posts document the team and the gathering; this README does not claim a prize or outcome absent from those sources.
-
 ## What you can try
 
 | Component | What it does | Current state |
