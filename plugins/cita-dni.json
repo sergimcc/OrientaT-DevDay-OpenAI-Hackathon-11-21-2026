@@ -1,0 +1,130 @@
+{
+  "id": "cita-dni",
+  "name": "Cita previa DNI y pasaporte",
+  "authority": "Dirección General de la Policía (Ministerio del Interior)",
+  "level": "estatal",
+  "status": "draft",
+  "domains": ["citapreviadnie.es", "dnielectronico.es"],
+  "home": "https://www.citapreviadnie.es/citaPreviaDni/",
+  "notes": [
+    "Para sacar o renovar el DNI o el pasaporte hay que reservar cita previa en citapreviadnie.es. Los requisitos (foto, documentos, tasa, autorizaciones) están en dnielectronico.es, en los menús de obtención del DNI y de pasaporte.",
+    "La página de inicio muestra un aviso de cookies con el botón «Aceptar»: lo pulsa la persona.",
+    "En la página de inicio el enlace «CONTINUAR» lleva a la solicitud; el asistente puede pulsarlo.",
+    "La propia web avisa de que la app MiDNI no necesita cita para el registro en los Puestos de Actualización de Documentos (PAD).",
+    "Si la persona tiene dudas de su caso, la web ofrece el correo sac@policia.es para consultas sobre la cita previa.",
+    "Nunca pidas ni repitas el número de DNI, la letra, el equipo de expedición, la fecha de validez, el número de soporte ni el código de seguridad. La persona los escribe en el formulario del panel o en la web, nunca en el chat; tú no los ves.",
+    "El código de seguridad es un CAPTCHA: no lo leas, no lo resuelvas ni lo comentes. La web ofrece «Modo audio» como alternativa y se lo puedes recordar a la persona.",
+    "Pulsar «Continuar» o «Enviar datos» no significa que haya una cita. Solo hay cita cuando la web muestra una confirmación explícita.",
+    "Mapa en borrador: las direcciones respondieron el 2026-11-21 y se han observado la portada, la pantalla de acceso y los campos del formulario «Acceso con datos DNI/NIE» (ids y longitudes máximas leídos del HTML de la página), sin enviarlo. Las pantallas tras «Enviar datos» no se han comprobado: fíate de la página. Si una pantalla no coincide con lo descrito, vuelve a leerla y no inventes el botón."
+  ],
+  "user_only": ["Enviar datos", "Aceptar", "Confirmar", "Reservar", "Anular", "Anular cita", "Validar"],
+  "procedures": [
+    {
+      "id": "pedir-cita",
+      "title": "Pedir cita para el DNI o el pasaporte",
+      "summary": "Reservar cita en una oficina de expedición de la Policía Nacional para sacar o renovar el DNI o el pasaporte.",
+      "keywords": ["cita dni", "cita previa dni", "renovar dni", "renovar el dni", "dni caducado", "sacar el dni", "cita pasaporte", "renovar pasaporte", "pasaporte", "primer dni", "dni perdido", "dni robado"],
+      "entry_url": "https://www.citapreviadnie.es/citaPreviaDni/",
+      "login": ["datos_documento"],
+      "you_need": [
+        "El DNI físico a mano: hay que copiar datos de él (número, letra, equipo de expedición, fecha de validez y, si es DNI electrónico, número de soporte)",
+        "Saber si es DNI o pasaporte, y si es renovación, primera vez, pérdida o robo",
+        "La provincia u oficina donde quiere ir",
+        "Poder oír o ver un código de seguridad (la web ofrece modo audio)"
+      ],
+      "steps": [
+        {
+          "title": "Página de inicio",
+          "url": "https://www.citapreviadnie.es/citaPreviaDni/",
+          "guidance": "Explica en una frase que aquí se reserva, consulta o anula la cita del DNI o pasaporte. Si aparece el aviso de cookies, señala «Aceptar» para que lo pulse la persona. Después pulsa el enlace «CONTINUAR».",
+          "person_does": "Acepta el aviso de cookies si aparece.",
+          "user_only": ["Aceptar"]
+        },
+        {
+          "title": "Forma de acceso",
+          "guidance": "Si la persona tiene el DNI a mano, abre «Acceso con datos DNI/NIE» (enlace de navegación). Si prefiere DNI electrónico, NIE o pérdida/sustracción, avísale de que esas ramas no están mapeadas y guíate por la página."
+        },
+        {
+          "title": "Datos del documento",
+          "guidance": "Abre el formulario del panel con show_form (form_id «datos-dni»): la persona escribe ahí los datos de su DNI y la extensión los copia a los campos de la página (ids observados: numDocumento, letraDocumento, codEquipo, fechaValidez, numSoporte) sin que tú los veas. Antes, di en una frase que tenga el DNI a mano. El soporte solo lo tiene el DNI electrónico. No señales estos campos uno a uno salvo que la persona prefiera escribirlos en la web o el formulario falle; en ese caso señala cada uno con la referencia de read_page, sin pedir que dicten el dato.",
+          "person_does": "Escribe los datos de su DNI en el formulario del panel (o en la web), sin decirlos en el chat.",
+          "form": {
+            "id": "datos-dni",
+            "title": "Datos de tu DNI",
+            "intro": "Escríbelos tal como aparecen en tu documento. Se copian a la web oficial; el código de seguridad y «Enviar datos» los haces tú después en la página.",
+            "fields": [
+              { "id": "numero", "label": "Número de documento", "target": "numDocumento", "hint": "Solo las cifras, sin la letra.", "max_length": 8, "pattern": "[0-9]{1,8}", "numeric": true },
+              { "id": "letra", "label": "Letra", "target": "letraDocumento", "max_length": 1, "pattern": "[A-Z]", "uppercase": true },
+              { "id": "equipo", "label": "Equipo de expedición", "target": "codEquipo", "hint": "Está impreso en el documento. La web tiene una imagen de ayuda.", "max_length": 9, "uppercase": true },
+              { "id": "validez", "label": "Fecha de validez", "target": "fechaValidez", "hint": "dd/mm/aaaa o PERMANENTE", "placeholder": "dd/mm/aaaa", "max_length": 10, "pattern": "[0-9]{2}/[0-9]{2}/[0-9]{4}|PERMANENTE", "uppercase": true },
+              { "id": "soporte", "label": "Número de soporte", "target": "numSoporte", "hint": "Solo para DNI electrónico. Ejemplo: AAA000000", "max_length": 9, "pattern": "[A-Z0-9]{1,9}", "uppercase": true, "optional": true }
+            ]
+          }
+        },
+        {
+          "title": "Código de seguridad",
+          "guidance": "Señala «Código de Seguridad» (codSeguridad). No leas, resuelvas ni comentes el código. Recuerda que existe «Modo audio» en la web.",
+          "person_does": "Completa el código de seguridad con los controles de la propia web."
+        },
+        {
+          "title": "Enviar los datos",
+          "guidance": "Cuando la persona haya revisado los datos, señala «Enviar datos» y explica que al pulsarlo la web los comprobará. No lo pulses tú. Después lee la página de nuevo: la pantalla siguiente no está verificada, así que no anticipes lo que aparecerá.",
+          "person_does": "Revisa los datos y pulsa ella «Enviar datos».",
+          "user_only": ["Enviar datos"]
+        },
+        {
+          "title": "Elegir trámite, oficina, día y hora",
+          "guidance": "Explica cada pantalla: tipo de documento y trámite, provincia y oficina, y huecos libres. Elegir es un campo: lo hace la persona. Si no hay huecos, sugiere probar otra oficina cercana o volver más tarde.",
+          "person_does": "Elige el trámite, la oficina, el día y la hora."
+        },
+        {
+          "title": "Confirmar y guardar el justificante",
+          "guidance": "Antes de confirmar, recuerda revisar oficina, fecha y hora. Señala el botón de confirmar. Después explica que conviene guardar o imprimir el justificante y llevar a la cita lo que pida dnielectronico.es (foto reciente, documentos, tasa) y llegar puntual.",
+          "person_does": "Confirma la cita y guarda el justificante.",
+          "user_only": ["Confirmar", "Reservar"]
+        }
+      ],
+      "notes": [
+        "El resaltado de los campos del formulario no se ha probado aún en Chrome con la extensión."
+      ]
+    },
+    {
+      "id": "consultar-anular",
+      "title": "Consultar o anular una cita del DNI o pasaporte",
+      "summary": "Ver los datos de una cita ya reservada o anularla para liberar el hueco.",
+      "keywords": ["anular cita dni", "cancelar cita dni", "consultar cita dni", "cambiar cita dni", "gestión de citas", "mi cita dni"],
+      "entry_url": "https://www.citapreviadnie.es/citaPreviaDni/",
+      "login": ["sin_identificacion"],
+      "steps": [
+        {
+          "title": "Entrar en la gestión de citas",
+          "url": "https://www.citapreviadnie.es/citaPreviaDni/",
+          "guidance": "Pulsa «CONTINUAR» y busca la opción de gestión, consulta o anulación de citas.",
+          "person_does": "Acepta el aviso de cookies si aparece."
+        },
+        {
+          "title": "Identificarse y gestionar",
+          "guidance": "Señala los campos que pide la web. Si la persona quiere anular, explica que la cita se pierde y que tendrá que pedir otra; señala el botón de anular y deja que decida.",
+          "person_does": "Escribe sus datos, consulta la cita y, si quiere, la anula.",
+          "user_only": ["Anular", "Anular cita", "Confirmar"]
+        }
+      ]
+    },
+    {
+      "id": "requisitos",
+      "title": "Qué llevar a la cita del DNI o pasaporte",
+      "summary": "Consultar en el portal oficial del DNI los requisitos de cada trámite: foto, documentos, tasa y autorizaciones.",
+      "keywords": ["requisitos dni", "qué llevar dni", "documentos dni", "foto dni", "tasa dni", "precio dni", "requisitos pasaporte", "dni menor"],
+      "entry_url": "https://www.dnielectronico.es/PortalDNIe/",
+      "login": ["sin_identificacion"],
+      "steps": [
+        {
+          "title": "Buscar el trámite en el portal del DNI",
+          "url": "https://www.dnielectronico.es/PortalDNIe/",
+          "guidance": "Abre el menú de obtención del DNI o el de pasaporte y busca el caso de la persona (renovación, primera vez, menor, pérdida). Resume los requisitos en una lista corta. El portal puede cargar su contenido en marcos: lee la página entera."
+        }
+      ]
+    }
+  ],
+  "checked": "2026-11-21"
+}

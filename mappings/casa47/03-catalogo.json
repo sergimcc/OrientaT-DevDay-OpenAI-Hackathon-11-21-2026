@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.catalog",
+  "route": {
+    "hash": "/viviendas/listado",
+    "match": "prefix",
+    "queryParameters": "dynamic"
+  },
+  "goal": "Comparar viviendas y abrir detalles",
+  "filters": [
+    {
+      "key": "call",
+      "label": "Convocatoria",
+      "selector": "#lv-convocatoria-desktop",
+      "options": "dynamic_from_dom",
+      "importance": "eligibility"
+    },
+    {
+      "key": "province",
+      "label": "Provincia",
+      "selector": "#lv-provincia-desktop",
+      "options": "dynamic_from_dom"
+    },
+    {
+      "key": "municipality",
+      "label": "Municipio",
+      "selector": "#lv-municipio-desktop",
+      "options": "dynamic_from_dom"
+    },
+    {
+      "key": "postalCode",
+      "label": "Código postal",
+      "selector": "#lv-cp-desktop",
+      "options": "dynamic_from_dom"
+    },
+    {
+      "key": "reference",
+      "label": "Referencia",
+      "selector": "#lv-ref-desktop",
+      "options": "dynamic_from_dom"
+    },
+    {
+      "key": "income",
+      "label": "Ingresos netos anuales",
+      "selector": "#lv-ingresos-desktop",
+      "importance": "eligibility"
+    },
+    {
+      "key": "people",
+      "label": "Personas",
+      "selector": "#lv-personas-desktop",
+      "importance": "eligibility"
+    },
+    {
+      "key": "maxRent",
+      "label": "Alquiler máximo",
+      "selector": "#lv-precio-desktop",
+      "importance": "preference"
+    },
+    {
+      "key": "bedrooms",
+      "label": "Dormitorios",
+      "selector": "#lv-habitaciones-desktop",
+      "importance": "preference"
+    },
+    {
+      "key": "bathrooms",
+      "label": "Baños",
+      "selector": "#lv-banos-desktop",
+      "importance": "preference"
+    },
+    {
+      "key": "minimumArea",
+      "label": "Superficie mínima",
+      "selector": "#lv-superficie-desktop",
+      "importance": "preference"
+    },
+    {
+      "key": "accessibility",
+      "label": "Accesibilidad",
+      "selector": "#lv-accesibilidad-desktop",
+      "importance": "eligibility_or_preference"
+    },
+    {
+      "key": "disabilityQuota",
+      "label": "Cupo de discapacidad",
+      "selector": "#lv-cupo-desktop",
+      "importance": "eligibility"
+    },
+    {
+      "key": "features",
+      "label": "Garaje / trastero",
+      "selector": "#lv-caracteristicas-desktop",
+      "importance": "preference"
+    }
+  ],
+  "card": {
+    "openDetailSelector": ".lvu-card-btn[href^='#/viviendas/']",
+    "observedData": [
+      "referencia",
+      "municipio",
+      "código postal",
+      "dormitorios",
+      "superficie",
+      "alquiler mensual",
+      "distintivo de cupo"
+    ]
+  },
+  "otherControls": [
+    "Ordenar por fecha o precio",
+    "Eliminar filtro individual",
+    "Eliminar todos los filtros",
+    "Paginación",
+    "Vista de mapa"
+  ],
+  "guidance": [
+    "Lee opciones y resultados en tiempo real; cantidades, precios, estados y municipios cambian.",
+    "Una tarjeta visible no demuestra que se pueda solicitar: comprobar estado de convocatoria y ficha.",
+    "Separar filtros de preferencia de requisitos de acceso."
+  ],
+  "next": [
+    "casa47.home_detail",
+    "casa47.map"
+  ]
+}

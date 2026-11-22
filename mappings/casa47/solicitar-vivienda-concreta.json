@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0",
+  "id": "casa47.solicitar_vivienda_concreta",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "goal": "Encontrar una vivienda concreta, comprobar sus condiciones e iniciar su solicitud",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "submit": false,
+    "sign": false,
+    "register": false,
+    "storePersonalData": false
+  },
+  "steps": [
+    {
+      "route": "#/",
+      "label": "Empezar la búsqueda",
+      "target": "a[href='#/filtrado-viviendas']",
+      "visibleText": "Viviendas disponibles para ti",
+      "guidance": "Señala la entrada al buscador. La persona elige la vivienda."
+    },
+    {
+      "route": "#/filtrado-viviendas",
+      "label": "Acotar resultados",
+      "fields": [
+        { "name": "Provincia", "selector": "button.dd-trigger[aria-label^='Provincia:']" },
+        { "name": "Personas en la vivienda", "selector": "button.dd-trigger[aria-label^='Personas en la vivienda:']" },
+        { "name": "Ingresos netos anuales del hogar", "selector": "input[aria-label='Ingresos netos anuales del hogar en euros al año']", "privacy": "No leer ni guardar su valor" },
+        { "name": "Medidas de accesibilidad", "selector": "button.dd-trigger[aria-label^='Medidas de accesibilidad:']" }
+      ],
+      "actions": [
+        { "name": "Comprobar", "selector": "button.btn-primary", "note": "Usa los filtros que haya indicado la persona" },
+        { "name": "O visualiza todas las viviendas", "selector": "button.lvfu-link-todas" }
+      ],
+      "guidance": "Los filtros son opcionales para explorar; sin ingresos no afirmes compatibilidad económica."
+    },
+    {
+      "route": "#/viviendas/listado",
+      "label": "Elegir una vivienda",
+      "detailSelector": "a.lvu-card-btn[href^='#/viviendas/']",
+      "fieldsToCompare": ["convocatoria", "provincia", "municipio", "ingresos", "número de personas", "cupo de discapacidad"],
+      "guidance": "Señala Ver detalles de vivienda en una tarjeta concreta; una tarjeta visible no acredita que se cumplan los requisitos. Los resultados y filtros son dinámicos."
+    },
+    {
+      "route": "#/viviendas/:reference",
+      "label": "Comprobar la ficha",
+      "readFromPage": ["referencia", "convocatoria asociada", "ingresos anuales mínimo y máximo", "tamaño de hogar admitido", "alquiler mensual", "cupo y accesibilidad"],
+      "baseSelector": "a.dvu-context-link[href^='#/listado-convocatorias/']",
+      "referenceSelector": "button.dvu-ref-notice-code-row",
+      "startSelector": "button.dvu-btn-solicitud",
+      "guidance": "Explica por qué una condición publicada no encaja, si la hay; consulta estado, plazo y bases de la convocatoria. La persona decide si pulsa Iniciar solicitud y conserva la referencia. Nunca presentes la comparación como elegibilidad definitiva."
+    },
+    {
+      "route": "#/solicitud/convocatoria",
+      "label": "Elegir la convocatoria de la solicitud",
+      "fields": ["Provincia", "Municipio"],
+      "action": "Solicitar en la tarjeta de la convocatoria asociada a la ficha",
+      "guidance": "El botón Iniciar solicitud de la ficha lleva aquí: no crea por sí mismo un borrador. Comprueba que la convocatoria coincida con la ficha. La lista tiene paginación y puede mostrar En curso. La persona elige la convocatoria y pulsa Solicitar.",
+      "conditional": {
+        "when": "Existe una solicitud sin terminar",
+        "dialog": "Tienes una solicitud sin terminar",
+        "choices": ["Retomar solicitud", "Descartar y empezar de nuevo"],
+        "guidance": "Explica que descartar elimina los datos introducidos. No elijas ninguna opción por la persona."
+      }
+    }
+  ],
+  "afterStart": {
+    "status": "unverified_in_this_run",
+    "guidance": "La selección de convocatoria y las pantallas del borrador no se recorrieron en esta comprobación para no alterar la solicitud existente. No presupongas que la referencia queda seleccionada; verifícala en Selección de vivienda. La persona rellena, firma y presenta por su cuenta."
+  }
+}

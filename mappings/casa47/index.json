@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "description": "Mapa de acciones públicas desde la portada hasta el comienzo de la solicitud. Los valores del catálogo se leen de la página en tiempo real.",
+  "actions": [
+    "01-entrada.json",
+    "02-filtro-inicial.json",
+    "03-catalogo.json",
+    "04-mapa.json",
+    "05-ficha-vivienda.json",
+    "06-convocatorias.json",
+    "07-inicio-solicitud.json"
+  ],
+  "status": "partially_verified",
+  "primaryAction": "solicitar-vivienda-concreta.json",
+  "pending": [
+    "Comprobar si la referencia de la ficha se conserva al llegar a Selección de vivienda.",
+    "Inspeccionar HTML de la ruta autenticada sin datos personales ni tokens."
+  ],
+  "routeMatching": "Usar URL hash y comprobar controles visibles antes de señalar; no inferir elegibilidad solo por aparecer en resultados."
+}

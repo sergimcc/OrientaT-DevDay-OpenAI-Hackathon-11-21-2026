@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.home_detail",
+  "route": {
+    "hash": "/viviendas/:reference",
+    "match": "pattern"
+  },
+  "goal": "Comprobar si merece la pena solicitar esta vivienda",
+  "readFromPage": [
+    "referencia",
+    "municipio",
+    "código postal",
+    "convocatoria",
+    "estado y plazo de convocatoria",
+    "ingresos netos anuales mínimos y máximos de esta vivienda",
+    "mínimo y máximo de convivientes",
+    "alquiler mensual",
+    "superficie",
+    "dormitorios",
+    "baños",
+    "planta",
+    "equipamiento",
+    "accesibilidad y cupo de discapacidad",
+    "bases completas"
+  ],
+  "exampleObserved": {
+    "reference": "26-10-CAT-015",
+    "annualNetIncomeMinEUR": 22477,
+    "annualNetIncomeMaxEUR": 38960,
+    "householdMin": 1,
+    "householdMax": 4,
+    "rentMonthlyEUR": 487,
+    "disabilityQuota": true,
+    "exampleOnly": true
+  },
+  "comparisonRules": [
+    {
+      "id": "income_below_min",
+      "when": "income != null && income < home.minAnnualNetIncome",
+      "message": "Los ingresos del hogar quedan por debajo del mínimo publicado para esta vivienda."
+    },
+    {
+      "id": "income_above_max",
+      "when": "income != null && income > home.maxAnnualNetIncome",
+      "message": "Los ingresos del hogar superan el máximo publicado para esta vivienda."
+    },
+    {
+      "id": "household_outside_range",
+      "when": "people != null && (people < home.minPeople || people > home.maxPeople)",
+      "message": "El número de convivientes no está dentro del intervalo publicado."
+    },
+    {
+      "id": "reserved_quota",
+      "when": "home.disabilityQuota === true",
+      "message": "Esta vivienda está en un cupo reservado: consulta las condiciones específicas en las bases."
+    },
+    {
+      "id": "call_not_open",
+      "when": "call.status !== 'Abierta'",
+      "message": "Comprueba el estado y el plazo antes de iniciar una solicitud."
+    },
+    {
+      "id": "insufficient_data",
+      "when": "income == null || people == null",
+      "message": "Faltan datos para comparar los requisitos económicos o de convivencia."
+    }
+  ],
+  "controls": [
+    "Ver bases completas",
+    "Copiar código de referencia",
+    "Iniciar solicitud"
+  ],
+  "guidance": "Mostrar motivos concretos y las bases oficiales; nunca certificar elegibilidad definitiva. El usuario decide si inicia la solicitud.",
+  "next": [
+    "casa47.application_start",
+    "casa47.calls"
+  ]
+}

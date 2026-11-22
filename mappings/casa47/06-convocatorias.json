@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.calls",
+  "routes": [
+    {
+      "hash": "/listado-convocatorias",
+      "match": "exact"
+    },
+    {
+      "hash": "/listado-convocatorias/:code",
+      "match": "pattern"
+    }
+  ],
+  "goal": "Consultar plazos, viviendas y requisitos oficiales",
+  "listFilters": [
+    "Ubicación",
+    "Estado: Abierta, Próximamente, En evaluación, Cerrada",
+    "Orden por fecha"
+  ],
+  "detailSections": [
+    "Resumen",
+    "Resumen por zonas",
+    "Requisitos",
+    "Comprobaciones",
+    "Fechas clave",
+    "Viviendas"
+  ],
+  "documents": [
+    "Bases",
+    "Normas de comercialización",
+    "Convocatoria",
+    "Anexo III: autorización de adultos",
+    "Anexo IV: representación",
+    "Anexo V: privacidad",
+    "Formulario en papel"
+  ],
+  "exampleObserved": {
+    "code": "CATALUÑA-10-2026",
+    "annualNetGeneralMinEUR": 16800,
+    "annualNetGeneralMaxEUR": 63000,
+    "incomeFiscalYear": 2025,
+    "exampleOnly": true
+  },
+  "guidance": [
+    "Leer las bases y el plazo vigentes de la convocatoria elegida.",
+    "El intervalo general de una convocatoria no sustituye al intervalo específico de cada vivienda.",
+    "Las viviendas de cupo de discapacidad o adaptadas tienen requisitos propios.",
+    "Las opciones y fechas se leen en tiempo real; no fijar el ejemplo como norma general."
+  ],
+  "next": [
+    "casa47.catalog",
+    "casa47.home_detail"
+  ]
+}

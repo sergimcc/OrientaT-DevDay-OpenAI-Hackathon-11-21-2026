@@ -1,0 +1,260 @@
+{
+  "id": "casa47",
+  "name": "Casa 47 (vivienda asequible)",
+  "authority": "Casa 47, entidad pública de vivienda del Ministerio de Vivienda y Agenda Urbana",
+  "level": "estatal",
+  "status": "draft",
+  "domains": [
+    "casa47.es",
+    "mivau.sede.gob.es"
+  ],
+  "home": "https://portal.casa47.es/",
+  "notes": [
+    "Casa 47 gestiona el parque estatal de vivienda asequible. Sus viviendas son solo de alquiler, nunca de venta. Según su web, publica convocatorias públicas cada tres meses aproximadamente, y no hay listas de espera fuera de las convocatorias.",
+    "www.casa47.es es la web informativa (convocatorias, bases, listados, preguntas frecuentes). portal.casa47.es es el portal donde se ven las viviendas y, según las preguntas frecuentes, se hace la solicitud, la tramitación, el pago y la gestión del alquiler.",
+    "El Registro Electrónico de Casa 47 está en la sede del Ministerio de Vivienda (mivau.sede.gob.es).",
+    "Según las preguntas frecuentes, las viviendas son para rentas entre 2 y 7,5 veces el IPREM y sin otras propiedades, y la renta no supera el 30 % de los ingresos netos de quienes vivirán en ella. Explica esto en general y remite a las bases de cada convocatoria: los requisitos exactos los fija cada una.",
+    "Para dudas sobre una convocatoria la web da el correo dudas.convocatoria@casa47.es y el teléfono 047.",
+    "La web está en castellano, catalán, euskera, gallego e inglés.",
+    "El recorrido público de portal.casa47.es se verificó el 2026-11-21. Las opciones, plazos, precios y cupos cambian; leer la página y las bases vigentes en cada visita.",
+    "portal.casa47.es es una aplicación de una sola página: cada pantalla es una dirección con # (#/filtrado-viviendas, #/viviendas/listado, #/viviendas/<referencia>, #/listado-convocatorias, #/solicitud/convocatoria). Tras abrirla o cambiar de pantalla, vuelve a leer la página. No se ha comprobado si la referencia de la ficha pasa sola a la selección de vivienda de la solicitud.",
+    "El portal repite muchos controles en versión de escritorio y de móvil: señala solo el que la persona ve."
+  ],
+  "user_only": [
+    "Solicitar",
+    "Enviar",
+    "Presentar",
+    "Firmar",
+    "Pagar",
+    "Renunciar",
+    "Registrarse",
+    "Acceder"
+  ],
+  "procedures": [
+    {
+      "id": "alquiler-asequible",
+      "title": "Solicitar una vivienda de alquiler asequible",
+      "summary": "Buscar una vivienda en el portal, comparar los requisitos de su ficha y decidir si iniciar una solicitud.",
+      "keywords": [
+        "alquiler asequible",
+        "vivienda asequible",
+        "casa 47",
+        "casa47",
+        "pedir vivienda",
+        "solicitar vivienda",
+        "piso de alquiler",
+        "vivienda pública",
+        "convocatoria vivienda",
+        "alquiler social"
+      ],
+      "entry_url": "https://portal.casa47.es/",
+      "login": [
+        "sin_identificacion",
+        "clave"
+      ],
+      "you_need": [
+        "DNI o NIE de las personas que vivirán en la vivienda",
+        "Datos de ingresos de la unidad de convivencia (las bases de la convocatoria dicen cuáles)"
+      ],
+      "steps": [
+        {
+          "title": "Elegir cómo buscar",
+          "url": "https://portal.casa47.es/",
+          "guidance": "En la portada señala Viviendas disponibles para ti para empezar por filtros, o Ver convocatorias abiertas para leer bases y plazos. Explica ambas rutas y deja que la persona elija.",
+          "person_does": "Elige la ruta de búsqueda."
+        },
+        {
+          "title": "Indicar filtros iniciales",
+          "url": "https://portal.casa47.es/#/filtrado-viviendas",
+          "guidance": "Señala Provincia, Personas en la vivienda, Ingresos netos anuales del hogar y Medidas de accesibilidad. Los ingresos son la suma anual neta de quienes vivirán allí. Se puede pulsar Comprobar o visualizar todas las viviendas; sin ingresos no afirmes compatibilidad económica. No pidas ni almacenes ingresos en el chat.",
+          "person_does": "Selecciona provincia, tamaño del hogar y accesibilidad; introduce sus ingresos en la web si quiere comprobar el filtro económico; pulsa Comprobar o Visualiza todas las viviendas.",
+          "user_only": [
+            "Comprobar",
+            "Visualiza todas las viviendas"
+          ]
+        },
+        {
+          "title": "Explorar catálogo y mapa",
+          "url": "https://portal.casa47.es/#/viviendas/listado",
+          "guidance": "Guía por convocatoria, provincia, municipio, código postal, referencia, ingresos, personas, alquiler máximo, dormitorios, baños, superficie, accesibilidad, cupo, garaje y trastero. Distingue preferencias de requisitos. Se puede ordenar, retirar filtros y cambiar al mapa. Prioriza convocatoria abierta: una tarjeta visible no demuestra que pueda solicitarse. En el mapa, cada grupo reúne varias viviendas: abre un resultado y comprueba su ficha; estar dentro de un grupo no significa cumplir los requisitos.",
+          "person_does": "Ajusta los filtros y abre Ver detalles de las viviendas que le interesen."
+        },
+        {
+          "title": "Revisar ficha de la vivienda",
+          "guidance": "Lee de la ficha su referencia, convocatoria, alquiler, ingresos netos mínimos y máximos, número de convivientes y condiciones de cupo o accesibilidad. Compara cada condición con los datos que la persona haya indicado; explica el motivo concreto de un desajuste. Si faltan datos, di que la comparación es incompleta. Lee Ver bases completas. No tomes los umbrales de otra vivienda como regla general. Nunca presentes la comparación como una elegibilidad definitiva: eso lo decide Casa 47. Si la vivienda es de cupo de discapacidad o adaptada, remite a sus condiciones propias en las bases. Puedes señalar Copiar código de referencia para que la persona la guarde.",
+          "person_does": "Compara las opciones, revisa las bases y guarda la referencia de la vivienda que prefiera."
+        },
+        {
+          "title": "Consultar la convocatoria",
+          "url": "https://portal.casa47.es/#/listado-convocatorias",
+          "guidance": "Consulta el estado y plazo actual, las bases, requisitos generales, comprobaciones, documentos y viviendas de la convocatoria. Los requisitos generales no sustituyen al rango específico de cada ficha. Si está En evaluación, Cerrada o Próximamente, no presentes la vivienda como solicitables ahora. Entre los documentos suelen estar las bases, las normas de comercialización, la convocatoria, los anexos de autorización de adultos, representación y privacidad, y el formulario en papel.",
+          "person_does": "Lee las bases de la convocatoria elegida."
+        },
+        {
+          "title": "Iniciar la solicitud",
+          "guidance": "Desde la ficha, Iniciar solicitud lleva a #/solicitud/convocatoria, donde la persona debe elegir la convocatoria asociada a la vivienda y pulsar Solicitar. Si aparece Tienes una solicitud sin terminar, explica las opciones Retomar y Descartar; descartar pierde los datos introducidos. No elijas por ella. Tras elegir la convocatoria, guíate por la pantalla real: no presupongas que la referencia se conserva y pide comprobarla en Selección de vivienda. No avances a firma o presentación.",
+          "person_does": "Decide si inicia, retoma o descarta un borrador, elige la convocatoria y cómo actúa; rellena los datos personalmente.",
+          "user_only": [
+            "Iniciar solicitud",
+            "Siguiente",
+            "Firmar",
+            "Registrar",
+            "Enviar",
+            "Retomar solicitud",
+            "Descartar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "listados-adjudicacion",
+      "title": "Consultar los listados de adjudicación",
+      "summary": "Encontrar los listados de adjudicación provisional, exclusiones y lista de espera de una convocatoria de Casa 47.",
+      "keywords": [
+        "listado adjudicación",
+        "adjudicación provisional",
+        "lista de espera casa 47",
+        "resultado sorteo",
+        "me han dado la vivienda",
+        "exclusiones"
+      ],
+      "entry_url": "https://www.casa47.es/convocatoria-alquiler-vivienda-asequible",
+      "login": [
+        "sin_identificacion"
+      ],
+      "steps": [
+        {
+          "title": "Localizar los listados",
+          "url": "https://www.casa47.es/convocatoria-alquiler-vivienda-asequible",
+          "guidance": "Lee la página y localiza los enlaces a los listados de cada convocatoria. Explica qué es cada uno (adjudicación provisional, revocaciones, exclusiones, lista de espera) y que se abren como documentos. Si hay plazo de alegaciones, dilo.",
+          "person_does": "Abre el documento y busca su número o sus datos en él."
+        }
+      ],
+      "notes": [
+        "No pidas a la persona su número de solicitud ni su nombre para buscarlo tú: que lo busque ella en el documento."
+      ]
+    },
+    {
+      "id": "preguntas-frecuentes",
+      "title": "Preguntas frecuentes sobre vivienda asequible",
+      "summary": "Resolver dudas generales: precio del alquiler, duración de los contratos, requisitos, cuándo habrá viviendas.",
+      "keywords": [
+        "preguntas frecuentes casa 47",
+        "cuánto cuesta el alquiler",
+        "duración contrato",
+        "iprem",
+        "requisitos vivienda asequible",
+        "dudas casa 47"
+      ],
+      "entry_url": "https://www.casa47.es/preguntas-frecuentes-vivienda-asequible",
+      "login": [
+        "sin_identificacion"
+      ],
+      "steps": [
+        {
+          "title": "Buscar la respuesta",
+          "url": "https://www.casa47.es/preguntas-frecuentes-vivienda-asequible",
+          "guidance": "Lee la página (puedes usar read_page con query para buscar una palabra) y responde con lo que dice, citando que viene de las preguntas frecuentes de Casa 47. Abre las secciones plegadas si hace falta."
+        }
+      ]
+    },
+    {
+      "id": "telefono-047",
+      "title": "Teléfono 047 de atención sobre vivienda",
+      "summary": "Información sobre el teléfono 047 de atención a la ciudadanía en materia de vivienda.",
+      "keywords": [
+        "047",
+        "teléfono 047",
+        "teléfono vivienda",
+        "llamar casa 47",
+        "atención telefónica vivienda"
+      ],
+      "entry_url": "https://www.casa47.es/telefono-047",
+      "login": [
+        "sin_identificacion"
+      ],
+      "steps": [
+        {
+          "title": "Leer la información",
+          "url": "https://www.casa47.es/telefono-047",
+          "guidance": "Lee la página y explica para qué sirve el 047 y su horario si aparece."
+        }
+      ]
+    },
+    {
+      "id": "registro-electronico",
+      "title": "Presentar un escrito en el Registro Electrónico de Casa 47",
+      "summary": "Enviar una instancia o documentación a Casa 47 por su Registro Electrónico, en la sede del Ministerio de Vivienda.",
+      "keywords": [
+        "registro electrónico casa 47",
+        "sede electrónica casa 47",
+        "instancia general",
+        "presentar escrito",
+        "alegación",
+        "alegaciones casa 47"
+      ],
+      "entry_url": "https://www.casa47.es/sede-electronica",
+      "login": [
+        "clave",
+        "certificado",
+        "dnie"
+      ],
+      "steps": [
+        {
+          "title": "Elegir el procedimiento",
+          "url": "https://www.casa47.es/sede-electronica",
+          "guidance": "Lee la lista de procedimientos del Registro Electrónico y explica cuál encaja (por ejemplo, instancia general o alegaciones a una convocatoria). Sigue el enlace a la sede del Ministerio."
+        },
+        {
+          "title": "Sede del Ministerio de Vivienda",
+          "url": "https://mivau.sede.gob.es/categoria?idCat=100049",
+          "guidance": "Abre el procedimiento elegido. La sede pide identificarse con Cl@ve, certificado o DNIe. Señala cada campo y explica qué adjuntar en general.",
+          "person_does": "Se identifica, rellena el escrito, adjunta los documentos, firma y lo presenta. Guarda el justificante de registro.",
+          "user_only": [
+            "Firmar",
+            "Presentar",
+            "Enviar",
+            "Adjuntar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vender-vivienda-o-suelo",
+      "title": "Ofrecer viviendas o solares a Casa 47",
+      "summary": "Convocatorias en las que Casa 47 compra viviendas o solares a propietarios para el parque de alquiler asequible.",
+      "keywords": [
+        "vender vivienda casa 47",
+        "vender piso al estado",
+        "vender solar",
+        "compra de viviendas casa 47",
+        "adquisición viviendas",
+        "adquisición solares"
+      ],
+      "entry_url": "https://www.casa47.es/convocatoria-compra-viviendas",
+      "login": [
+        "sin_identificacion",
+        "clave",
+        "certificado"
+      ],
+      "steps": [
+        {
+          "title": "Leer la convocatoria",
+          "url": "https://www.casa47.es/convocatoria-compra-viviendas",
+          "guidance": "Explica qué tipo de viviendas compra Casa 47, los plazos y cómo se presenta la oferta. Si la persona ofrece un solar, abre https://www.casa47.es/convocatoria-compra-solares."
+        },
+        {
+          "title": "Presentar la oferta",
+          "guidance": "Sigue los enlaces de la convocatoria al formulario o al registro. Señala cada campo.",
+          "person_does": "Rellena y presenta la oferta.",
+          "user_only": [
+            "Enviar",
+            "Presentar",
+            "Firmar"
+          ]
+        }
+      ]
+    }
+  ],
+  "checked": "2026-11-21"
+}

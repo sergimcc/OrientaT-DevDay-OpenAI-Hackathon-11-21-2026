@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.map",
+  "route": {
+    "hash": "/viviendas/mapa",
+    "match": "prefix"
+  },
+  "goal": "Explorar viviendas por ubicación",
+  "filters": [
+    {
+      "key": "call",
+      "selector": "#mv-convocatoria"
+    },
+    {
+      "key": "province",
+      "selector": "#mv-provincia"
+    },
+    {
+      "key": "municipality",
+      "selector": "#mv-municipio"
+    },
+    {
+      "key": "people",
+      "selector": "#mv-personas"
+    },
+    {
+      "key": "income",
+      "selector": "#mv-ingresos"
+    },
+    {
+      "key": "maxRent",
+      "selector": "#mv-precio"
+    },
+    {
+      "key": "bedrooms",
+      "selector": "#mv-habitaciones"
+    },
+    {
+      "key": "bathrooms",
+      "selector": "#mv-banos"
+    },
+    {
+      "key": "accessibility",
+      "selector": "#mv-accesibilidad"
+    }
+  ],
+  "otherControls": [
+    "Buscar viviendas",
+    "Filtros Avanzados",
+    "Aplicar Filtros",
+    "Limpiar todo",
+    "Acercar/alejar",
+    "Vista general",
+    "Lista de resultados"
+  ],
+  "guidance": "Los grupos del mapa reúnen viviendas; abrir un resultado y verificar la ficha individual. No asumir elegibilidad por estar dentro de un grupo.",
+  "next": [
+    "casa47.home_detail",
+    "casa47.catalog"
+  ]
+}

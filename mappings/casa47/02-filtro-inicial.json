@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.quick_filter",
+  "route": {
+    "hash": "/filtrado-viviendas",
+    "match": "exact"
+  },
+  "goal": "Acotar viviendas por datos del hogar",
+  "fields": [
+    {
+      "key": "province",
+      "label": "Provincia",
+      "selector": "button.dd-trigger[aria-label^='Provincia:']",
+      "default": "Todas",
+      "options": "dynamic_from_dom",
+      "requiredForPreciseMatch": false
+    },
+    {
+      "key": "householdSize",
+      "label": "Personas en la vivienda",
+      "selector": "button.dd-trigger[aria-label^='Personas en la vivienda:']",
+      "observedOptions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "default": "Cualquiera",
+      "requiredForPreciseMatch": true
+    },
+    {
+      "key": "annualNetHouseholdIncome",
+      "label": "Ingresos netos anuales del hogar (€/año)",
+      "selector": "input[aria-label='Ingresos netos anuales del hogar en euros al año']",
+      "mobileSelector": "input.lvfu-field-mobile-input[aria-label='Ingresos netos anuales del hogar en euros al año']",
+      "unit": "EUR/year",
+      "help": "Suma los ingresos netos anuales de todas las personas que viven en el hogar.",
+      "requiredForPreciseMatch": true,
+      "privacy": "No almacenar el valor; leerlo solo con intervención consciente del usuario si la extensión lo necesita."
+    },
+    {
+      "key": "accessibility",
+      "label": "Medidas de accesibilidad",
+      "selector": "button.dd-trigger[aria-label^='Medidas de accesibilidad:']",
+      "observedOptions": [
+        "Adaptada",
+        "Accesible",
+        "No accesible"
+      ],
+      "default": "Cualquiera",
+      "requiredForPreciseMatch": false
+    }
+  ],
+  "actions": [
+    {
+      "label": "Comprobar",
+      "effect": "Abre #/viviendas/listado con los filtros introducidos."
+    },
+    {
+      "label": "Visualiza todas las viviendas",
+      "selector": "button.lvfu-link-todas",
+      "effect": "Abre el catálogo sin el filtro previo."
+    }
+  ],
+  "guards": [
+    "Si no hay ingresos, no presentar los resultados como económicamente compatibles.",
+    "Escoger solamente controles visibles: la página contiene versiones de escritorio y móvil."
+  ],
+  "next": [
+    "casa47.catalog"
+  ]
+}

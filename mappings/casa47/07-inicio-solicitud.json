@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.application_start",
+  "route": {
+    "hash": "/solicitud/convocatoria",
+    "match": "exact"
+  },
+  "goal": "Elegir la convocatoria tras pulsar Iniciar solicitud en una ficha",
+  "observedQuestion": "Elige la convocatoria",
+  "observedFields": ["Provincia", "Municipio"],
+  "observedControl": "Solicitar en la convocatoria asociada a la ficha",
+  "conditionalDialog": {
+    "title": "Tienes una solicitud sin terminar",
+    "options": ["Retomar solicitud", "Descartar y empezar de nuevo"],
+    "risk": "Descartar pierde los datos del borrador"
+  },
+  "guidance": [
+    "Iniciar solicitud en la ficha navega a elegir convocatoria; aún no crea un borrador.",
+    "La persona comprueba la convocatoria, pulsa Solicitar y decide si retoma o descarta un borrador existente.",
+    "Conservar la referencia elegida y comprobarla en Selección de vivienda.",
+    "No firmar, registrar ni enviar."
+  ],
+  "unverified": [
+    "No se ha comprobado si la referencia de la ficha se selecciona automáticamente en el borrador.",
+    "La pantalla tras Solicitar y el resto del formulario autenticado no se recorrieron en esta comprobación."
+  ],
+  "next": [
+    "authenticated_flow_pending"
+  ]
+}

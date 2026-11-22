@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "site": "Casa 47",
+  "origin": "https://portal.casa47.es",
+  "observedAt": "2026-11-21",
+  "mode": "guide_only",
+  "automationPolicy": {
+    "fillFields": false,
+    "selectOptions": false,
+    "sign": false,
+    "register": false,
+    "submit": false,
+    "storePersonalData": false
+  },
+  "id": "casa47.home",
+  "route": {
+    "hash": "/",
+    "match": "exact"
+  },
+  "goal": "Elegir cómo empezar la búsqueda",
+  "choices": [
+    {
+      "label": "Viviendas disponibles para ti",
+      "destination": "#/filtrado-viviendas",
+      "guidance": "Empieza por ubicación y características del hogar."
+    },
+    {
+      "label": "Convocatorias",
+      "destination": "#/listado-convocatorias",
+      "guidance": "Consulta plazos, requisitos y bases antes de elegir vivienda."
+    }
+  ],
+  "guidance": "Elige tú el recorrido. La extensión puede señalar los enlaces visibles, sin pulsarlos automáticamente.",
+  "next": [
+    "casa47.quick_filter",
+    "casa47.calls"
+  ]
+}
